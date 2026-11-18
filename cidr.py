@@ -1,5 +1,8 @@
 """a very basic CIDR to Mask and vice versa"""
-from sys import argv
+from sys import argv, exit
+if len(argv) == 1:
+    print("Usage example:\npython3 cidr /24")
+    exit(1)
 if argv[1] == 'cidr':
     cidr = argv[2].strip('/')
     mask = str("1" * int(cidr)).zfill(32)
